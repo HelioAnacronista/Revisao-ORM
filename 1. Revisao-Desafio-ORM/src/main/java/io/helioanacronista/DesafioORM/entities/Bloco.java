@@ -17,8 +17,12 @@ public class Bloco {
     @Column(columnDefinition = "TIMESTAMP WITHOUT TIME ZONE")
     private Instant fim;
 
+    /*
+    Muitas atividades para um bloco
+    */
 
-    //Relacionamento de classe ->
-
+    @ManyToOne
+    @JoinColumn(name = "atividade_id")
+    private Atividade atividades;
 
 }

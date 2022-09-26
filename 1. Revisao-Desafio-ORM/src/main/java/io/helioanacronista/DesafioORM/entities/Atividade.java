@@ -18,8 +18,21 @@ public class Atividade {
 
     private Double preco;
 
+    /*
+    A classe Ativadade tem relacionamento com as classes de Categoria e Participantes.
 
-    //Relacionamento de classe ->
+    # Fazemos a pergunta na classe que estamos
 
+    -Categoria é de 1 para *(muitos)
+
+    - Participantes é de Muitos para Muitos
+    */
+
+    @ManyToOne
+    @JoinColumn(name = "categoria_id")
+    private Categoria categorias;
+
+    @ManyToMany(mappedBy = "atividades")
+    private Set<Participante> participantes = new HashSet<>();
 
 }

@@ -15,7 +15,14 @@ public class Categoria {
     private String descricao;
 
 
-    //Relacionamento de classe ->
+    /*
 
+    Quem fica de criar a tabela é o atividade por isso usamos o Mappedby
+    dentro desse relacionamento
+
+    e recebendo uma lista de atividadeds
+     */
+    @OneToMany(mappedBy = "categorias")
+    private List<Atividade> atividades = new ArrayList<>();
 
 }

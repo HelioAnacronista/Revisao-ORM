@@ -1,7 +1,9 @@
 package io.helioanacronista.DesafioORM.entities;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 @Entity
@@ -17,7 +19,16 @@ public class Participante {
     private String email;
 
 
-    //Relacionamento de classe ->
+    /*
 
+    Criamos um tabale para evitar o mutiplos id na tabela
+     */
+    @ManyToMany
+    @JoinTable(
+            name = "tb_participante_atividade",
+            joinColumns = @JoinColumn(name = "participante_id"),
+            inverseJoinColumns = @JoinColumn(name = "atividade_id")
+    )
+    private List<Atividade> atividades = new ArrayList<>();
 
 }
