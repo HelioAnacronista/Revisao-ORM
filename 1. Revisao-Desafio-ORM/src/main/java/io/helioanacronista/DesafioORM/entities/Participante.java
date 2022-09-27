@@ -2,9 +2,7 @@ package io.helioanacronista.DesafioORM.entities;
 
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 @Entity
 @Table(name = "tb_participante")
@@ -30,5 +28,4 @@ public class Participante {
             inverseJoinColumns = @JoinColumn(name = "atividade_id")
     )
     private List<Atividade> atividades = new ArrayList<>();
-
 }

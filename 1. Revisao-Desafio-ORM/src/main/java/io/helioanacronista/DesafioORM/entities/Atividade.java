@@ -27,12 +27,10 @@ public class Atividade {
 
     - Participantes é de Muitos para Muitos
     */
-
     @ManyToOne
     @JoinColumn(name = "categoria_id")
     private Categoria categorias;
 
     @ManyToMany(mappedBy = "atividades")
     private Set<Participante> participantes = new HashSet<>();
-
 }

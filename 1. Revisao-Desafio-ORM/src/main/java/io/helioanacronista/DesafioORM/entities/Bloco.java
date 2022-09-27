@@ -18,9 +18,9 @@ public class Bloco {
     private Instant fim;
 
     /*
-    Muitas atividades para um bloco
+    o bloco está como responsavel pela a entidade atividade
+    bloco recebe muitas atividades
     */
-
     @ManyToOne
     @JoinColumn(name = "atividade_id")
     private Atividade atividades;

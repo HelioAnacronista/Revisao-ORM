@@ -1,7 +1,6 @@
 package io.helioanacronista.DesafioORM.entities;
 
 import javax.persistence.*;
-import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -23,6 +22,5 @@ public class Categoria {
     e recebendo uma lista de atividadeds
      */
     @OneToMany(mappedBy = "categorias")
-    private List<Atividade> atividades = new ArrayList<>();
-
+    private List<Atividade> atividades;
 }
