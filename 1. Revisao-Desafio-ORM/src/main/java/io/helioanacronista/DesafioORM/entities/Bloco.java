@@ -18,8 +18,8 @@ public class Bloco {
     private Instant fim;
 
     /*
-    o bloco está como responsavel pela a entidade atividade
-    bloco recebe muitas atividades
+    UML mostra que a entidade bloco pode ter muitos, porem ativiade apenas 1
+    então o bloco é responsavel por criar o id de atividade por sua entidade.
     */
     @ManyToOne
     @JoinColumn(name = "atividade_id")

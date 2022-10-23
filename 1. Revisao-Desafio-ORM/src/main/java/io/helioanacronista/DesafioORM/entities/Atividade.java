@@ -19,17 +19,16 @@ public class Atividade {
     private Double preco;
 
     /*
-    A classe Ativadade tem relacionamento com as classes de Categoria e Participantes.
+    Atividade terar um coluna com id da categoria
+    então seguindo a UML @ManyToOne e adicionamos a coluna @JoinColumn(name = "categoria_id")
 
-    # Fazemos a pergunta na classe que estamos
-
-    -Categoria é de 1 para *(muitos)
-
-    - Participantes é de Muitos para Muitos
+    Como sabemos que temos uma relação muitos para muitos precisamos criar uma tabela de id para a modelagem.
+    Nesse caso a entidade participante terar que criar essa tabela de mutiplos id.
+    portanto usando o mappedBy
     */
     @ManyToOne
     @JoinColumn(name = "categoria_id")
-    private Categoria categorias;
+    private Categoria categoria;
 
     @ManyToMany(mappedBy = "atividades")
     private Set<Participante> participantes = new HashSet<>();
