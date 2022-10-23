@@ -28,7 +28,7 @@ public class Atividade {
     */
     @ManyToOne
     @JoinColumn(name = "categoria_id")
-    private Categoria categoria;
+    private Categoria categorias;
 
     @ManyToMany(mappedBy = "atividades")
     private Set<Participante> participantes = new HashSet<>();
